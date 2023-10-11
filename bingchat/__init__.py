@@ -14,13 +14,12 @@ def open_bing_and_click_chat(driver):
     chat_button.click()
 
 class BingChat:
-    def __init__(self):
-        #self.driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()), options=self.options)
+    def __init__(self, headless=False):
         options = webdriver.EdgeOptions()
-        options.use_chromium = True
-        options.binary_location = '/usr/bin/microsoft-edge-stable'
+        if headless:
+            options.add_argument('--headless')
 
-        self.driver = webdriver.Edge()
+        self.driver = webdriver.Edge(options=options)
         open_bing_and_click_chat(self.driver)
 
     def set_tone_creative(self):

@@ -128,8 +128,8 @@ def get_ai_responses(driver):
         # Confirm privacy statement
         try:
             root = msg_element.find_element(By.CSS_SELECTOR,"cib-muid-consent")
-            root = expand_shadow_element(driver, resp)
-            confirm_button = resp.find_element(By.CSS_SELECTOR,"button")
+            root = expand_shadow_element(driver, root)
+            confirm_button = root.find_element(By.CSS_SELECTOR,"button")
             confirm_button.click()
         except:
             pass

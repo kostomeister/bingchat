@@ -7,7 +7,7 @@ BingChat provides a Python interface to interact with the Bing chatbot AI. It al
 Since BingChat is currently only available on GitHub, you'll need to install it directly from the repo:
 
 ```bash
-git clone https://github.com/user/bingchat.git
+git clone https://github.com/Gadersd/bingchat.git
 cd bingchat
 pip install . 
 ```

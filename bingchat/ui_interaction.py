@@ -46,13 +46,10 @@ def is_ai_responding(driver):
     # return False if button is disabled or True otherwise
     return stop_responding_button.is_enabled()
 
-def submit_prompt(driver): 
+def submit_prompt(driver):
     root = traverse_shadow_roots_actionbar(driver)
 
-    submit_root = wait_for_element(root, "cib-icon-button[description='Submit']")
-    submit_root = expand_shadow_element(driver, submit_root)
-
-    submit_button = wait_for_element_clickable(submit_root, "button")
+    submit_button = wait_for_element(root, "div > div.main-container > div > div.bottom-controls > div.bottom-right-controls > div.control.submit > button")
     submit_button.click()
 
     while is_ai_responding(driver):

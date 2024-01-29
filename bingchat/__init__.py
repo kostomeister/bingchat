@@ -12,9 +12,7 @@ class PromptUnavailableException(Exception):
         super().__init__("No prompts remaining.")
 
 def open_bing_and_click_chat(driver):
-    driver.get("https://www.bing.com/")
-    chat_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//a[.//*[contains(text(), 'Chat')]]")))
-    chat_button.click()
+    driver.get("https://www.bing.com/search?q=Bing+AI&showconv=1&FORM=hpcodx")
 
 class BingChat:
     def __init__(self, headless=False):
